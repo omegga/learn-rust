@@ -4,6 +4,7 @@ fn main() {
     ownership();
     control_flow();
     loops();
+    another_function(1, 2);
 }
 
 fn ownership() {
@@ -310,4 +311,16 @@ fn loops() {
         }
         println!("LIFTOFF!!!");
     }
+}
+
+// in function signatures, you must declare the type of each parameter
+fn another_function(x: i32, y: i32) {
+    five();
+    println!("the value of x is {} and y is {}", x, y);
+}
+
+// we also declare the type of the returned value
+fn five() -> i32 {
+    5 // using a semicolon here would turn this expression in a statement
+      // 5; // error
 }
