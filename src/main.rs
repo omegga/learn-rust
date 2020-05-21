@@ -5,17 +5,16 @@ fn main() {
     control_flow();
     loops();
     another_function(1, 2);
+    variables();
 }
 
 fn ownership() {
     {
         // The string literal
 
-        // s refers to a value that is hardcoded
-        // into the text of our program
-        // it is valid from the point at which it's declared
-        // (when it comes into scope)
-        // until the end of the current scope
+        // s refers to a value that is hardcoded into the text of our program.
+        // It is valid from the point at which it's declared
+        // (when it comes into scope) until the end of the current scope
         let s = "hello";
         println!("{}", s);
     }
@@ -26,8 +25,10 @@ fn ownership() {
         // Since string literals are immutable, we cannot use them for text
         // whose size in unknown at compile time and might change while
         // running the program.
+
         // Instead, we use a 2nd String type that allocates on the heap
         // String::from can create a String from a string literal
+
         let s = String::from("hello");
         println!("{}", s);
     }
@@ -35,7 +36,7 @@ fn ownership() {
     {
         // String mutation
 
-        // this kind of string can be mutated
+        // This kind of string can be mutated
         let mut s = String::from("hello");
         s.push_str(", world!"); // appends a literal to a String
         println!("{}", s);
@@ -46,26 +47,29 @@ fn ownership() {
 
         let x = 5;
 
-        // this creates a copy of the value 5 beause integers are simple values with known and fixed size
+        // This creates a copy of the value 5 beause integers are simple values with known and fixed size
         let y = x;
 
-        // these two 5 values are pushed onto the stack
+        // These two 5 values are pushed onto the stack
         println!("x = {}, y = {}", x, y);
     }
 
     {
         // Moves
 
-        // this creates a pointer on the stack and allocates memory on the heap
+        // This creates a pointer on the stack and allocates memory on the heap
         let s1 = String::from("hello");
 
-        // this creates a copy of pointer s1 on the stack
-        // and does not copy the data on the heap
-        // (here, s2 refers to the same allocated memory on the heap by s1)
+        // This creates a copy of pointer s1 on the stack
+        // and does not copy the data on the heap.
+        // Here, s2 refers to the same allocated memory on the heap by s1
+
         let s2 = s1;
         println!("{}", s2);
-        // --> Rust will never automatically create deep copies of data
-        // because of this, any automatic copying can be assumed
+
+        // --> Rust will never automatically create deep copies of data.
+
+        // Because of this, any automatic copying can be assumed
         // to be inexpensive in terms of runtime performance
     }
 
@@ -230,7 +234,7 @@ fn control_flow() {
     }
 
     {
-        // values in an if expression must be of the same type
+        // Values in an if expression must be of the same type
 
         // let number = if condition { 5 } else { "six" }; // error
     }
@@ -238,7 +242,9 @@ fn control_flow() {
 
 fn loops() {
     {
-        // loop endlessly repeats a block of a code
+        // loop
+
+        // "loop" endlessly repeats a block of a code
 
         // loop {
         //     println!("again");
@@ -246,7 +252,7 @@ fn loops() {
     }
 
     {
-        // Stopping a loop
+        // Stopping a loop with "break"
 
         // We can stop a loop and return a value from it
         // nb: loop is also an expression
@@ -258,7 +264,7 @@ fn loops() {
                 break counter + 1;
             }
         };
-        println!("result: {}", result);
+        println!("result = {}", result);
     }
 
     {
@@ -266,6 +272,7 @@ fn loops() {
 
         // Evaluating a condition on each iteration is possible
         // with a combination of loop, if, else, and break.
+
         // This pattern is so common that Rust has a while loop doing just that:
 
         let mut number = 3;
@@ -323,4 +330,163 @@ fn another_function(x: i32, y: i32) {
 fn five() -> i32 {
     5 // using a semicolon here would turn this expression in a statement
       // 5; // error
+}
+
+fn variables() {
+    {
+        // Declaring a variable
+
+        let x = 5;
+        println!("x = {}", x);
+    }
+
+    {
+        // Reassigning with "mut"
+
+        let mut x = 5;
+        println!("the value of x is {}", x);
+        x = 6;
+        println!("the value of x is {}", x);
+    }
+
+    {
+        // Constants
+
+        const MAX_POINTS: u32 = 100_000;
+        println!("MAX_POINTS = {}", MAX_POINTS);
+    }
+
+    {
+        // Shadowing
+
+        let x = 6;
+        println!("x = {}", x);
+
+        // we redeclare the variable x
+        let x = 7;
+        println!("x = {}", x);
+
+        // x = 8; // error
+        // --> we have to use "mut" to reassign x
+    }
+
+    {
+        // Shadowing allows to change the type of the variable
+
+        // Because we're effectively creating a new variable,
+        // it spares us from having to come up with different names
+        let spaces = "   ";
+        let spaces = spaces.len();
+        println!("spaces:{}", spaces);
+
+        // If we change the type using mut:
+
+        // let mut spaces = "   ";
+        // spaces = spaces.len(); // error
+        // println!("{}", spaces);
+
+        // Rust is a statically typed language
+        // --> It must know the types of all variables at compile time
+    }
+
+    {
+        // In cases when many types are possible, we must add a type annotation
+
+        let guess: u32 = "42".parse().expect("Not a number");
+        println!("{}", guess);
+    }
+
+    {
+        // Floating-point numbers
+
+        let x = 2.0; // f64, by default, double precision
+        println!("x:{}", x);
+        let x: f32 = 3.0; // f32, single-precision float
+        println!("x:{}", x);
+    }
+
+    {
+        // Booleans (1 byte in size)
+
+        let x = true;
+        println!("x:{}", x);
+        let x: bool = false;
+        println!("x:{}", x);
+    }
+
+    {
+        // Characters (4 bytes in size)
+
+        let x = 'z';
+        println!("x:{}", x);
+    }
+
+    // Rust has 2 primitive compound types
+    // tuples and arrays
+
+    {
+        // Tuples
+
+        // tuples have a fixed length
+        // tuples can have different types
+
+        let x: (i32, f64, u8) = (500, 6.4, 1);
+        println!("x.0{}", x.0);
+        let (a, b, c) = x;
+        println!("a={} b={} c={}", a, b, c);
+    }
+
+    {
+        // Arrays
+
+        // arrays have a fixed length
+        // an array is a single chunk of memory allocated on the stack (not on the heap)
+
+        let x = [1, 2, 3, 4, 5];
+        println!("x = {:?}", x);
+
+        // an array has the same type for all its values
+        // let x = [1, 2, 3, 4, 'a']; // error
+    }
+
+    {
+        // Initializing an array
+
+        let x: [i32; 5] = [1, 2, 3, 4, 5];
+        println!("x = {:?}", x);
+    }
+
+    {
+        // Creating an array that contains the same value for each element
+
+        let x = [3; 5]; // same as let x = [3, 3, 3, 3, 3]
+        println!("x = {:?}", x);
+    }
+
+    {
+        // Accessing array elements
+
+        let x = [1, 2, 3, 4, 5];
+        let first = x[0];
+        let second = x[1];
+        println!("first: {} second: {}", first, second);
+    }
+
+    {
+        // Invalid array element access
+
+        let x = [1, 2, 3, 4, 5];
+        let index = 10;
+        println!("x = {:?}, index = {}", x, index);
+
+        // This will panic at runtime:
+        // let element = x[index]; // panic
+        // println!("the value of element is:{}", element);
+
+        // As a safety principle, rust checks that the index < array length and
+        // exits immediately otherwise.
+
+        // In many low-level languages, this check is not done and invalid
+        // memory can be accessed
+    }
 }
