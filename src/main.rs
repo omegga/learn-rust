@@ -1,6 +1,8 @@
 fn main() {
-    println!("Hello, world!");
-    ownership();
+		println!("Hello, world!");
+		
+		ownership();
+		control_flow();
 }
 
 fn ownership() {
@@ -154,15 +156,15 @@ fn ownership() {
 fn takes_ownership(some_string: String) {
     // some_string comes into scope
     println!("{}", some_string);
-		// some_string goes out of scope and 'drop' is called.
-		// The backing memory is freed
-} 
+    // some_string goes out of scope and 'drop' is called.
+    // The backing memory is freed
+}
 
 fn makes_copy(some_integer: i32) {
     // some_integer comes into scope
     println!("{}", some_integer);
-		// some_integer goes out of scope. Nothing special happens
-} 
+    // some_integer goes out of scope. Nothing special happens
+}
 
 fn gives_ownership() -> String {
     // gives_ownership will move its return value into the function
@@ -177,4 +179,57 @@ fn gives_ownership() -> String {
 fn takes_and_gives_back(a_string: String) -> String {
     // a_string comes into scope
     a_string // a_string is returned and moves out to the calling function
+}
+
+fn control_flow() {
+    {
+        // if else
+
+        let number = 3;
+
+        if number < 5 {
+            println!("condition was true");
+        } else {
+            println!("condition was false");
+        }
+    }
+
+    {
+        // Condition must be a boolean
+
+        // if number {
+        //     println!("condition was false");
+        // }
+        // error
+    }
+
+    {
+        // Multiple conditions
+
+        let number = 3;
+
+        if number % 4 == 0 {
+            println!("divisible by 4");
+        } else if number % 3 == 0 {
+            println!("divisible by 3");
+        } else if number % 2 == 0 {
+            println!("divisible by 2");
+        } else {
+            println!("other");
+        }
+    }
+
+    {
+        // if is an expression
+
+        let condition = true;
+        let number = if condition { 5 } else { 6 };
+        println!("number = {}", number);
+    }
+
+    {
+        // values in an if expression must be of the same type
+
+        // let number = if condition { 5 } else { "six" }; // error
+    }
 }
