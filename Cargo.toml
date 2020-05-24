@@ -4,6 +4,7 @@ members = [
 	"basics",
 	"boxes",
 	"closures",
+	"dereferencing",
 	"dropping",
 	"loops",
 	"multiple_owners",
