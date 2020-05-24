@@ -4,6 +4,7 @@ members = [
 	"basics",
 	"boxes",
 	"closures",
+	"dropping",
 	"loops",
 	"multiple_owners",
 	"project_minigrep",
