@@ -3,5 +3,6 @@
 members = [
 	"basics",
 	"loops",
+	"multiple_owners",
 	"ownership"
 ]
