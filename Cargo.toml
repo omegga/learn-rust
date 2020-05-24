@@ -10,5 +10,6 @@ members = [
 	"multiple_owners",
 	"project_guessing_game",
 	"project_minigrep",
-	"ownership"
+	"ownership",
+	"testing"
 ]
