@@ -24,3 +24,7 @@ version = "0.1.0"
 name = "ownership"
 version = "0.1.0"
 
+[[package]]
+name = "project_minigrep"
+version = "0.1.0"
+
