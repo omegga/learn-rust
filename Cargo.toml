@@ -6,6 +6,7 @@ members = [
 	"closures",
 	"dereferencing",
 	"dropping",
+	"iterators",
 	"loops",
 	"multiple_owners",
 	"project_guessing_game",
