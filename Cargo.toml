@@ -2,6 +2,7 @@
 
 members = [
 	"basics",
+	"boxes",
 	"loops",
 	"multiple_owners",
 	"ownership"
