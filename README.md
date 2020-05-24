@@ -9,4 +9,9 @@ For example, in order to run the code for the "basics" section :
 ## Projects usage
 
 project_minigrep:  
+
 ```cargo run -p project_minigrep to project_minigrep/poem.txt```
+
+project_guessing_game:  
+
+```cargo run -p project_guessing_game```

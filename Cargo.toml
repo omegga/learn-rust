@@ -8,6 +8,7 @@ members = [
 	"dropping",
 	"loops",
 	"multiple_owners",
+	"project_guessing_game",
 	"project_minigrep",
 	"ownership"
 ]
