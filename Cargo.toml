@@ -14,5 +14,6 @@ members = [
 	"project_minigrep",
 	"ownership",
 	"testing",
+	"threads",
 	"vectors"
 ]
