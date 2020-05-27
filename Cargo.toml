@@ -6,6 +6,7 @@ members = [
 	"closures",
 	"dereferencing",
 	"dropping",
+	"enums",
 	"iterators",
 	"loops",
 	"multiple_owners",
