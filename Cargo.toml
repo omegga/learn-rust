@@ -10,6 +10,7 @@ members = [
 	"iterators",
 	"loops",
 	"multiple_owners",
+	"mutexes",
 	"project_guessing_game",
 	"project_minigrep",
 	"ownership",
