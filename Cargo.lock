@@ -68,6 +68,10 @@ name = "ownership"
 version = "0.1.0"
 
 [[package]]
+name = "patterns"
+version = "0.1.0"
+
+[[package]]
 name = "project_guessing_game"
 version = "0.1.0"
 dependencies = [

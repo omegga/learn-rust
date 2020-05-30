@@ -11,6 +11,7 @@ members = [
 	"loops",
 	"multiple_owners",
 	"mutexes",
+	"patterns",
 	"project_guessing_game",
 	"project_minigrep",
 	"ownership",
