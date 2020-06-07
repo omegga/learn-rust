@@ -18,5 +18,6 @@ members = [
 	"testing",
 	"threads",
 	"vectors",
+	"web-server-multi-thread",
 	"web-server-single-thread"
 ]
