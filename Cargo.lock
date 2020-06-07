@@ -120,6 +120,10 @@ name = "vectors"
 version = "0.1.0"
 
 [[package]]
+name = "web-server-single-thread"
+version = "0.1.0"
+
+[[package]]
 name = "winapi"
 version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"

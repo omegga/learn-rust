@@ -17,5 +17,6 @@ members = [
 	"ownership",
 	"testing",
 	"threads",
-	"vectors"
+	"vectors",
+	"web-server-single-thread"
 ]
