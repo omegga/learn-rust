@@ -15,6 +15,7 @@ members = [
 	"project_guessing_game",
 	"project_minigrep",
 	"ownership",
+	"strings",
 	"structs",
 	"testing",
 	"threads",
