@@ -9,6 +9,7 @@ members = [
 	"enums",
 	"iterators",
 	"loops",
+	"macros",
 	"multiple_owners",
 	"mutexes",
 	"patterns",
