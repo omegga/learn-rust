@@ -132,6 +132,10 @@ name = "threads"
 version = "0.1.0"
 
 [[package]]
+name = "traits"
+version = "0.1.0"
+
+[[package]]
 name = "vectors"
 version = "0.1.0"
 

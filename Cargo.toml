@@ -21,6 +21,7 @@ members = [
 	"structs",
 	"testing",
 	"threads",
+	"traits",
 	"vectors",
 	"web-server-multi-thread",
 	"web-server-single-thread"
