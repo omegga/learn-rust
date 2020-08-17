@@ -9,6 +9,7 @@ members = [
 	"enums",
 	"errors",
 	"iterators",
+	"lifetimes",
 	"loops",
 	"macros",
 	"multiple_owners",
